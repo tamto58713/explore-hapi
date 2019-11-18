@@ -1,0 +1,35 @@
+{
+  "name": "explore-hapi",
+  "version": "1.0.0",
+  "description": "This is an exercise in our Course",
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn build && node app",
+    "build": "babel src -d build"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ],
+      "stage-1"
+    ]
+  },
+  "repository": "https://github.com/tamto58713/explore-hapi.git",
+  "author": "Abel Tran, Long Vu, Manh Nguyen",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-1": "^6.24.1"
+  }
+}
