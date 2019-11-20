@@ -7,9 +7,9 @@ const { Model } = require('objection');
 
 Model.knex(knexConnection);
 
-class Post extends Model {
-  static tableName = 'Post';
+class Message extends Model {
+  static tableName = 'Message';
   static idColumn = 'id';
 }
 
-module.exports = { Post };
+module.exports = { Message };
