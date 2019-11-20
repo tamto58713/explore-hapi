@@ -2,9 +2,6 @@ require('dotenv').config({ path: './.env'});
 
 module.exports =  {
   client: 'mssql',
-  config: {
-    encrypt: true
-  },
   connection: {
     host: process.env.DB_HOST,
     port: parseInt(process.env.DB_PORT),
