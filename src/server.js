@@ -1,11 +1,11 @@
 'use strict';
 
 import Hapi from '@hapi/hapi';
-import pug from 'pug';
 import vision from '@hapi/vision';
 import path from 'path';
 
 import { User } from './models/User';
+import router from './router';
 
 const init = async () => {
   const server = Hapi.server({
@@ -14,27 +14,12 @@ const init = async () => {
   });
 
   await server.register(vision);
+  await server.route(router);
 
-  server.views({
-    engines: {
-      pug: {
-        module: pug
-      }
-    },
-    relativeTo: __dirname,
-    path: '../src/views'
-  });
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: async (request, h) => {
-      return h.view('index');
-    }
-  })
+  server.views(require('./config'));
 
   await server.start();
   console.log(`Server running on %s`, server.info.uri);
-
 }
 
 module.exports.server = init;
