@@ -1,6 +1,7 @@
 'use strict';
 
 const Knex = require('knex');
+
 const connection = require('../../knexfile');
 const knexConnection = Knex(connection);
 const { Model } = require('objection');
