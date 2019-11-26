@@ -9,5 +9,5 @@ module.exports = {
     }
   },
   relativeTo: __dirname,
-  path: '../src/views'
+  path: '../views'
 }
