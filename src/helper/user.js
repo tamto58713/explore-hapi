@@ -12,6 +12,6 @@ const getCurrentUser = async (token) => {
       return '';
     }
   }
-  return user.name;
+  return user ? user.name : '';
 }
 module.exports = { getCurrentUser };
