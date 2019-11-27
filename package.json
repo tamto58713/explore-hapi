@@ -4,8 +4,9 @@
   "description": "This is an exercise in our Course",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build && node app",
-    "build": "babel src -d build"
+    "start": "node app",
+    "build": "babel src -d build",
+    "postinstall": "yarn build"
   },
   "babel": {
     "presets": [
