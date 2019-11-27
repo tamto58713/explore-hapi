@@ -10,6 +10,26 @@ module.exports = [
     handler: require('./lamda/detail-pokemon')
   },
   {
+    path: '/login',
+    method: 'GET',
+    handler: require('./lamda/client/login')
+  },
+  {
+    path: '/login',
+    method: 'POST',
+    handler: require('./lamda/server/login')
+  },
+  {
+    path: '/register',
+    method: 'GET',
+    handler: require('./lamda/client/register')
+  },
+  {
+    path: '/register',
+    method: 'POST',
+    handler: require('./lamda/server/register')
+  },
+  {
     path: '/{param*}',
     method: 'GET',
     handler: {
