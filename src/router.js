@@ -30,6 +30,11 @@ module.exports = [
     handler: require('./lamda/server/register')
   },
   {
+    path: '/logout',
+    method: 'POST',
+    handler: require('./lamda/server/logout')
+  },
+  {
     path: '/{param*}',
     method: 'GET',
     handler: {

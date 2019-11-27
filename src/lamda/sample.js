@@ -1,3 +1,4 @@
 module.exports = async (request, handler) => {
-  return request.send('Hello World!');
+  await handler.state('token', 'asdfsdfsd');
+  return handler.response('Hello World')
 }

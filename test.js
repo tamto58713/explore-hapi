@@ -9,52 +9,6 @@ const port = process.env.PORT || 8080
 const pokemon = require("./pokemon").pokemon
 const db = require("./db")
 
-const formatUrl = (num) => {
-    if (num >= 100)
-        return num.toString()
-    if (num >= 10)
-        return "0" + num
-    return "00" + num
-}
-
-app.set("view engine", "pug")
-app.set("views", "views")
-app.use(express.static('public'))
-app.use(favicon(__dirname + '/public/images/favicon.ico'))
-app.use(bodyParser())
-
-let listPokemon = []
-let currentUser = {name: ""}
-for (let i = 0; i < 809; i++) {
-    let poke = {
-        ...pokemon[i],
-        imageUrl: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/" + formatUrl(i + 1) + ".png"
-    }
-    listPokemon.push(poke)
-}
-
-
-app.get("/", (req, res) => {
-    res.render("", { listPokemon, formatUrl, currentUser, title: "Pokedex" })
-})
-
-app.get("/pokemon/:id", (req, res) => {
-    const id = req.params.id
-    let pokemon = listPokemon.filter(pokemon => {
-        return pokemon.id == id
-    })[0]
-    res.render("pokedex/detail", { pokemon, title: "Pokemon" })
-})
-
-let errs = []
-app.get("/login", (req, res) => {
-    if (currentUser.name.length > 0) {
-        res.redirect("/")
-        return
-    }
-    res.render("auth/login", {errs: [], user: {userName: "", password: ""}, title: "Login"})
-})
-
 app.post("/login", (req, res) => {
     const userName = req.body.userName.toLocaleLowerCase()
 
