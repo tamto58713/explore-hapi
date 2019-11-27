@@ -4,7 +4,7 @@
   "description": "This is an exercise in our Course",
   "main": "index.js",
   "scripts": {
-    "start": "yarn build && node app",
+    "start": "npm build && node app",
     "build": "babel src -d build"
   },
   "babel": {
