@@ -1,8 +1,8 @@
 'use strict';
 
 import admin from 'firebase-admin';
-import bcrypt from 'bcrypt';
 
+import crypt from '../../helper/hash';
 import { schemaRegister } from '../../helper/validate';
 
 module.exports = async (request, handler) => {
@@ -55,8 +55,7 @@ module.exports = async (request, handler) => {
     return handler.view('auth/register', { user: { name, userName, email, password, repeat_password }, err: 'Email or UserName aldready Existed!', title: "Register"})
   }
 
-  const saltRound = 10;
-  const hashPassword = await bcrypt.hash(password, saltRound);
+  const hashPassword = crypt.hash(password);
 
   admin.firestore().collection('User').doc().set({
     name,

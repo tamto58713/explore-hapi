@@ -1,9 +1,9 @@
 'use strict';
 
 import admin from 'firebase-admin';
-import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 
+import crypt from '../../helper/hash';
 import { schemaLogin } from '../../helper/validate';
 
 module.exports = async (request, handler) => {
@@ -42,7 +42,7 @@ module.exports = async (request, handler) => {
     return handler.view('auth/login', { err: 'Wrong userName or password!', user: {userName , password }, title: "Login" });
   }
   
-  const isValidPass = await bcrypt.compare(password, user.password);
+  const isValidPass = crypt.compare(password, user.password);
 
   if (!isValidPass) {
     return handler.view('auth/login', { err: 'Wrong userName or password!', user: {userName , password }, title: "Login" });

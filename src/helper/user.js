@@ -1,4 +1,5 @@
 'use strict';
+
 import jwtDecode from 'jwt-decode';
 
 const getCurrentUser = async (token) => {

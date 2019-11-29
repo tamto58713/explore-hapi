@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports.pokemon = [{
     "id": 1,
     "name": {
