@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app",
-    "build": "babel src -d build",
-    "postinstall": "yarn build"
+    "build": "babel src -d build"
   },
   "babel": {
     "presets": [
@@ -46,8 +45,5 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-1": "^6.24.1"
-  },
-  "engines": {
-    "node": "12"
   }
 }
