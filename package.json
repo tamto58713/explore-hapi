@@ -24,26 +24,19 @@
   "author": "Abel Tran, Long Vu, Manh Nguyen",
   "license": "MIT",
   "dependencies": {
-    "@hapi/boom": "^8.0.1",
     "@hapi/hapi": "^18.4.0",
     "@hapi/inert": "^5.2.2",
     "@hapi/joi": "^16.1.7",
     "@hapi/vision": "^5.5.4",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-1": "^6.24.1",
     "bcrypt": "^3.0.7",
     "dotenv": "^8.2.0",
     "firebase-admin": "^8.8.0",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
-    "knex": "^0.20.2",
-    "localStorage": "^1.0.4",
-    "lowdb": "^1.0.0",
-    "mssql": "^6.0.1",
-    "node-localstorage": "^2.1.4",
-    "objection": "^1.6.11",
     "path": "^0.12.7",
-    "pug": "^2.0.4",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-1": "^6.24.1"
+    "pug": "^2.0.4"
   }
 }
